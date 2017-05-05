@@ -33,4 +33,8 @@ public class MainReservation implements Serializable {
         this.table = table;
     }
     
+    public void save() {
+        
+    }
+    
 }
