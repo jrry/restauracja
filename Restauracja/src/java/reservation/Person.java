@@ -22,7 +22,7 @@ public class Person {
     
     @NotNull(message = "Enter your phone")
     @Pattern(regexp = "([0-9]{9})", message = "Enter 9 numbers only")
-    private Integer phone;
+    private String phone;
 
     public String getName() {
         return name;
@@ -48,11 +48,11 @@ public class Person {
         this.mail = mail;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     

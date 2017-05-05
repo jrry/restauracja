@@ -2,6 +2,8 @@
 package reservation;
 
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -11,6 +13,7 @@ public class MainReservation implements Serializable {
     
     private Person person;
     private Table table;
+    private Calendar calendar;
 
     public MainReservation() {
         person = new Person();
@@ -34,7 +37,11 @@ public class MainReservation implements Serializable {
     }
     
     public void save() {
-        
+        calendar = new GregorianCalendar();
+        calendar.setTime(table.getDate());
+        Integer day, month, year;
+        day = calendar.get(Calendar.YEAR);
+        System.out.println(day);
     }
     
 }

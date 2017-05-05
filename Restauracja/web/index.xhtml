@@ -44,7 +44,7 @@
                             <p:inputText id="phone" value="#{mainReservation.person.phone}"/>
                             <p:message for="phone"/>
                         </h:panelGrid>
-                        <p:commandButton value="Wyślij" actionListener="#{mainReservation.save}"/>
+                        <p:commandButton value="Wyślij" ajax="false" actionListener="#{mainReservation.save}"/>
                     </p:tab>
                 </p:wizard>
             </h:form>
