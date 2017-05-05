@@ -4,48 +4,51 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Reservation</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+        
     </h:head>
     <h:body>
-        <h:form>
-            <p:wizard >
-                <p:tab id="reservation" title="Rezerwacja">
-                    <h:panelGrid columns="3" columnClasses="label, value">
-                        <h:outputLabel value="Data i godzina"/>
-                        <p:calendar id="datetime" value="#{mainReservation.table.date}" pattern="dd/MM/yyyy HH:mm"/>
-                        <p:message for="datetime"/>
+        <div class="main_content">
+            <h:form>
+                <p:wizard >
+                    <p:tab id="reservation" title="Rezerwacja">
+                        <h:panelGrid columns="3" columnClasses="label, value">
+                            <h:outputLabel value="Data i godzina"/>
+                            <p:calendar id="datetime" value="#{mainReservation.table.date}" pattern="dd/MM/yyyy HH:mm"/>
+                            <p:message for="datetime"/>
 
-                        <h:outputLabel value="Ilosc osob"/>
-                        <p:spinner id="persons" value="#{mainReservation.table.quantity}" />
-                        <p:message for="persons"/>
-                    </h:panelGrid>
-                </p:tab>
-                <p:tab id="tables" title="Stoliki">
+                            <h:outputLabel value="Ilosc osob"/>
+                            <p:spinner id="persons" value="#{mainReservation.table.quantity}" min="1" />
+                            <p:message for="persons"/>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab id="tables" title="Stoliki">
 
-                </p:tab>
-                <p:tab id="userData" title="Dane osobowe">
-                    <h:panelGrid columns="3" columnClasses="label, value">
-                        <h:outputLabel value="Imie"/>
-                        <p:inputText id="name" value="#{mainReservation.person.name}"/>
-                        <p:message for="name"/>
+                    </p:tab>
+                    <p:tab id="userData" title="Dane osobowe">
+                        <h:panelGrid columns="3" columnClasses="label, value">
+                            <h:outputLabel value="Imie"/>
+                            <p:inputText id="name" value="#{mainReservation.person.name}"/>
+                            <p:message for="name"/>
 
-                        <h:outputLabel value="Nazwisko"/>
-                        <p:inputText id="surname" value="#{mainReservation.person.surname}"/>
-                        <p:message for="surname"/>
+                            <h:outputLabel value="Nazwisko"/>
+                            <p:inputText id="surname" value="#{mainReservation.person.surname}"/>
+                            <p:message for="surname"/>
 
-                        <h:outputLabel value="e-mail"/>                                               
-                        <p:inputText id="mail" value="#{mainReservation.person.mail}"/>
-                        <p:message for="mail"/>
+                            <h:outputLabel value="e-mail"/>                                               
+                            <p:inputText id="mail" value="#{mainReservation.person.mail}"/>
+                            <p:message for="mail"/>
 
-                        <h:outputLabel value="telefon"/>
-                        <p:inputText id="phone" value="#{mainReservation.person.phone}"/>
-                        <p:message for="phone"/>
-                    </h:panelGrid>
-                    <p:commandButton value="Wyślij" actionListener="#{mainReservation.save}"/>
-                </p:tab>
-            </p:wizard>
-        </h:form>
-
+                            <h:outputLabel value="telefon"/>
+                            <p:inputText id="phone" value="#{mainReservation.person.phone}"/>
+                            <p:message for="phone"/>
+                        </h:panelGrid>
+                        <p:commandButton value="Wyślij" actionListener="#{mainReservation.save}"/>
+                    </p:tab>
+                </p:wizard>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
