@@ -7,37 +7,36 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-     
-      <h:form>
+        <h:form>
             <p:wizard >
                 <p:tab id="reservation" title="Rezerwacja">
                     <h:panelGrid columns="3" columnClasses="label, value">
                         <h:outputLabel value="Data i godzina"/>
                         <p:calendar id="datetime" value="#{mainReservation.table.date}" pattern="dd/MM/yyyy HH:mm"/>
                         <p:message for="datetime"/>
-                        
+
                         <h:outputLabel value="Ilosc osob"/>
-                        <p:inputNumber id="persons" value="#{mainReservation.table.quantity}" decimalPlaces="0"/>
+                        <p:spinner id="persons" value="#{mainReservation.table.quantity}" />
                         <p:message for="persons"/>
                     </h:panelGrid>
                 </p:tab>
                 <p:tab id="tables" title="Stoliki">
-                    
+
                 </p:tab>
                 <p:tab id="userData" title="Dane osobowe">
                     <h:panelGrid columns="3" columnClasses="label, value">
                         <h:outputLabel value="Imie"/>
                         <p:inputText id="name" value="#{mainReservation.person.name}"/>
                         <p:message for="name"/>
-                        
+
                         <h:outputLabel value="Nazwisko"/>
                         <p:inputText id="surname" value="#{mainReservation.person.surname}"/>
                         <p:message for="surname"/>
-                        
+
                         <h:outputLabel value="e-mail"/>                                               
                         <p:inputText id="mail" value="#{mainReservation.person.mail}"/>
                         <p:message for="mail"/>
-                        
+
                         <h:outputLabel value="telefon"/>
                         <p:inputText id="phone" value="#{mainReservation.person.phone}"/>
                         <p:message for="phone"/>
@@ -46,7 +45,7 @@
                 </p:tab>
             </p:wizard>
         </h:form>
-      
+
     </h:body>
 </html>
 
