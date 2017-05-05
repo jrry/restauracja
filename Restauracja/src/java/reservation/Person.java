@@ -1,10 +1,20 @@
 package reservation;
 
+import javax.validation.constraints.NotNull;
+
 
 public class Person {
+    
+    @NotNull(message = "Enter your name")
     private String name;
+    
+    @NotNull(message = "Enter your surname")
     private String surname;
+    
+    @NotNull(message = "Enter your email")
     private String mail;
+    
+    @NotNull(message = "Enter your phone")
     private Integer phone;
 
     public String getName() {

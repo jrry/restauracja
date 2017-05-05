@@ -10,9 +10,11 @@ import javax.faces.bean.ViewScoped;
 public class MainReservation implements Serializable {
     
     private Person person;
+    private Table table;
 
     public MainReservation() {
         person = new Person();
+        table = new Table();
     }
 
     public Person getPerson() {
@@ -21,6 +23,14 @@ public class MainReservation implements Serializable {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
     }
     
 }
