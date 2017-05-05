@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import json.Reservation;
 
 @ManagedBean
 @ViewScoped
@@ -14,6 +15,7 @@ public class MainReservation implements Serializable {
     private Person person;
     private Table table;
     private Calendar calendar;
+    private Reservation reservation;
 
     public MainReservation() {
         person = new Person();
@@ -39,9 +41,8 @@ public class MainReservation implements Serializable {
     public void save() {
         calendar = new GregorianCalendar();
         calendar.setTime(table.getDate());
-        Integer day, month, year;
-        day = calendar.get(Calendar.YEAR);
-        System.out.println(day);
+        reservation = new Reservation(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR), calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), table.getQuantity());
+        
     }
     
 }

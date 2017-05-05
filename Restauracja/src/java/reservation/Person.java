@@ -1,11 +1,12 @@
 package reservation;
 
+import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
-public class Person {
+public class Person implements Serializable {
     
     @NotNull(message = "Enter your name")
     @Size(min = 2, max = 50, message = "Min. 2 and max. 50 characters")

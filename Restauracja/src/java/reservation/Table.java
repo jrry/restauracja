@@ -1,12 +1,13 @@
 package reservation;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 
-public class Table {
+public class Table implements Serializable {
     
     @NotNull(message = "Specify number of places")
     @Min(value = 1, message = "Min. 1 table")
